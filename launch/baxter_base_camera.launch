@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+<!-- relation bettwen camera_link and base -->
+<node pkg="tf" type="static_transform_publisher" name="pub_tf_baxterBase2cameraLink" args=" 0.23000 0.063 0.275439  0.026372 0.029066 0.013821 0.999134 /base /camera_link 100 " />
+
+<!-- transfrom for getting pick pose -->
+<node pkg="tf" type="static_transform_publisher" name="pub_tf_582_pick_pose" args="0 0 0 -1.57 0 0   /aruco_marker_582_frame /aruco_marker_582_pick_frame 100" />
+
+<!-- get pick pose  -->
+<node name="pose_from_base_camera" pkg="birl_baxter_vision" type="get_pose_from_base_camera.py" 
+output="screen"/>
+
+ <!-- Show in RViz -->
+ <node name="rviz" pkg="rviz" type="rviz" args="-d '$(find birl_baxter_vision)/rviz/baxter_camera_link.config.rviz'"/>
+ 
+</launch>
+

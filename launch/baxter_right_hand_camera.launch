@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- arguments about camera and aruco -->
+    <arg name="camera" value="/cameras/right_hand_camera"/>
+    <arg name="camera_frame"          default="right_hand_camera"/>
+    <arg name="marker_frame"          default="aruco_marker_583_frame"/>
+    <arg name="camera_info"           default="$(arg camera)/camera_info"/>
+    <arg name="image"                 default="$(arg camera)/image"/>
+    <arg name="markersize"              value="0.0583"/>
+    <arg name="markerid"                value="583"/>
+    
+
+    <!-- leave empty and the pose will be published wrt param parent_name -->
+    <arg name="reference_frame"       default="/base"/>
+
+    <!-- the node for aruco tracking -->
+    <node name="aruco_tracker_right_hand_camera" pkg="aruco_ros" type="single">
+      <remap from="/camera_info" to="$(arg camera_info)" />
+      <remap from="/image" to="$(arg image)" />
+
+      <param name="image_is_rectified" value="true"/>
+      <param name="marker_size"        value="$(arg markersize)"/>
+      <param name="marker_id"          value="$(arg markerid)"/>
+      <param name="reference_frame"    value="$(arg reference_frame)"/>
+      <param name="camera_frame"       value="$(arg camera_frame)"/>
+      <param name="marker_frame"       value="$(arg marker_frame)" />
+    </node>
+     <!-- around x axis rotate pi/2 to get pick pose -->
+      <node pkg="tf" type="static_transform_publisher" name="pub_tf_582_pick_pose" args="0 0 0 1.57 0 0    /aruco_marker_582_frame /aruco_marker_582_pick_frame  100" />
+
+
+ </launch>

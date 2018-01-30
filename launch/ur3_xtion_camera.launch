@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- arguments about camera and aruco -->
+    <arg name="camera" value="/camera/rgb"/>
+    <arg name="camera_frame"          default="camera_rgb_optical_frame"/>
+    <arg name="marker_frame"          default="aruco_marker_582_frame"/>
+    <arg name="camera_info"           default="$(arg camera)/camera_info"/>
+    <arg name="image"                 default="$(arg camera)/image_rect_color"/>
+    <arg name="markersize"              value="0.07"/>
+    <arg name="markerid"                value="582"/>
+    
+
+    <!-- leave empty and the pose will be published wrt param parent_name -->
+    <arg name="reference_frame"       default="/base"/>
+
+    <!-- the node for aruco tracking -->
+    <node name="aruco_tracker_base_camera" pkg="aruco_ros" type="single">
+      <remap from="/camera_info" to="$(arg camera_info)" />
+      <remap from="/image" to="$(arg image)" />
+
+      <param name="image_is_rectified" value="true"/>
+      <param name="marker_size"        value="$(arg markersize)"/>
+      <param name="marker_id"          value="$(arg markerid)"/>
+      <param name="reference_frame"    value="$(arg reference_frame)"/>
+      <param name="camera_frame"       value="$(arg camera_frame)"/>
+      <param name="marker_frame"       value="$(arg marker_frame)" />
+    </node>
+
+
+    <!-- baxter to camera
+NOTE: In aruco_hand_eye.launch file, line 34 and line 35 indicate the transformation from /camere_rgb_optical_frame to /camer_link. Such transformation let the output calibration result is between /camera_link and /base.  
+-->
+<node pkg="tf" type="static_transform_publisher" name="pub_tf_baxterBase2cameraLink" args="  -0.230045 -0.605447 0.785348 -0.061291 0.049316 0.561633 0.823638  /base /camera_link 100 " />
+
+</launch>
+
