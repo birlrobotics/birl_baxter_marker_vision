@@ -10,7 +10,7 @@ Panels:
         - /TF1
         - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.345178
-    Tree Height: 263
+    Tree Height: 252
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -50,6 +50,12 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        FT_Top_Plate_right:
+          Value: true
+        FT_bottom_plate_right:
+          Value: true
+        FT_right:
+          Value: true
         aruco_marker_582_frame:
           Value: false
         aruco_marker_582_pick_frame:
@@ -138,6 +144,12 @@ Visualization Manager:
           Value: false
         r_gripper_r_finger_tip:
           Value: false
+        reference/FT_Top_Plate_right:
+          Value: true
+        reference/FT_bottom_plate_right:
+          Value: true
+        reference/FT_right:
+          Value: true
         reference/base:
           Value: false
         reference/collision_head_link_1:
@@ -390,15 +402,18 @@ Visualization Manager:
                           right_lower_forearm:
                             right_wrist:
                               right_hand:
-                                right_gripper_base:
-                                  r_gripper_l_finger:
-                                    r_gripper_l_finger_tip:
-                                      {}
-                                  r_gripper_r_finger:
-                                    r_gripper_r_finger_tip:
-                                      {}
-                                  right_gripper:
-                                    {}
+                                FT_bottom_plate_right:
+                                  FT_right:
+                                    FT_Top_Plate_right:
+                                      right_gripper_base:
+                                        r_gripper_l_finger:
+                                          r_gripper_l_finger_tip:
+                                            {}
+                                        r_gripper_r_finger:
+                                          r_gripper_r_finger_tip:
+                                            {}
+                                        right_gripper:
+                                          {}
                                 right_gripper_mass:
                                   right_gripper_object_mass:
                                     {}
@@ -482,15 +497,18 @@ Visualization Manager:
                           reference/right_lower_forearm:
                             reference/right_wrist:
                               reference/right_hand:
-                                reference/right_gripper_base:
-                                  reference/r_gripper_l_finger:
-                                    reference/r_gripper_l_finger_tip:
-                                      {}
-                                  reference/r_gripper_r_finger:
-                                    reference/r_gripper_r_finger_tip:
-                                      {}
-                                  reference/right_gripper:
-                                    {}
+                                reference/FT_bottom_plate_right:
+                                  reference/FT_right:
+                                    reference/FT_Top_Plate_right:
+                                      reference/right_gripper_base:
+                                        reference/r_gripper_l_finger:
+                                          reference/r_gripper_l_finger_tip:
+                                            {}
+                                        reference/r_gripper_r_finger:
+                                          reference/r_gripper_r_finger_tip:
+                                            {}
+                                        reference/right_gripper:
+                                          {}
                                 reference/right_gripper_mass:
                                   reference/right_gripper_object_mass:
                                     {}
@@ -521,6 +539,21 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        FT_Top_Plate_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        FT_bottom_plate_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        FT_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
         base:
           Alpha: 1
@@ -954,32 +987,32 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.96393
+      Distance: 1.87561
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.721033
-        Y: -0.140014
-        Z: 0.327486
+        X: 0.602161
+        Y: 0.0706544
+        Z: 0.279307
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.294795
+      Pitch: 0.104795
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.27488
+      Yaw: 6.07488
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 876
+  Height: 848
   Hide Left Dock: false
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000032600000326fc0200000012fc0000002800000148000000dd00fffffffa000000010100000002fb0000000a0049006d0061006700650000000000ffffffff0000005c00fffffffb000000100044006900730070006c0061007900730100000000000003260000016a00fffffffb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc00000176000001d80000001600fffffffa000000000100000002fb0000000a0049006d0061006700650100000000ffffffff0000005c00fffffffb0000000c00430061006d0065007200610000000000ffffffff0000000000000000fb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006100000002f4000000ca0000000000000000fb0000000c00430061006d006500720061020000024400000140000003de0000022dfb0000000c00430061006d00650072006102000002c2000001d0000001e1000000cafb0000000c00430061006d00650072006101000002f4000000ca0000000000000000fb0000000a0049006d006100670065010000019e000000160000000000000000fb0000000a0049006d006100670065010000019b000001940000000000000000fb0000000c00430061006d00650072006100000002a2000001600000000000000000fb0000000a0049006d0061006700650100000203000001ff0000000000000000fb0000000a0049006d00610067006501000001ba00000248000000000000000000000001000001c400000396fc0200000004fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0049006d0061006700650100000028000003960000000000000000fb0000000a0056006900650077007300000000440000037a000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000073f000000ddfc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006500000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000002330000032600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000003260000030afc0200000012fc000000280000013d000000dd00fffffffa000000010100000002fb0000000a0049006d0061006700650000000000ffffffff0000005c00fffffffb000000100044006900730070006c0061007900730100000000000003260000016a00fffffffb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc0000016b000001c70000001600fffffffa000000000100000002fb0000000a0049006d0061006700650100000000ffffffff0000005c00fffffffb0000000c00430061006d0065007200610000000000ffffffff0000000000000000fb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006100000002f4000000ca0000000000000000fb0000000c00430061006d006500720061020000024400000140000003de0000022dfb0000000c00430061006d00650072006102000002c2000001d0000001e1000000cafb0000000c00430061006d00650072006101000002f4000000ca0000000000000000fb0000000a0049006d006100670065010000019e000000160000000000000000fb0000000a0049006d006100670065010000019b000001940000000000000000fb0000000c00430061006d00650072006100000002a2000001600000000000000000fb0000000a0049006d0061006700650100000203000001ff0000000000000000fb0000000a0049006d00610067006501000001ba00000248000000000000000000000001000001c400000396fc0200000004fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0049006d0061006700650100000028000003960000000000000000fb0000000a0056006900650077007300000000440000037a000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000073f000000ddfc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006500000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000002330000030a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -989,5 +1022,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1375
-  X: 65
-  Y: 24
+  X: 151
+  Y: 106

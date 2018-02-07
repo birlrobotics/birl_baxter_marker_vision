@@ -8,8 +8,8 @@
 <include file="$(find birl_baxter_vision)/launch/baxter_base_camera.launch"/>
 <!--launch trac_ik-->
 <include file="$(find trac_ik_baxter)/launch/ik_server.launch"/>
-
-
+<!--update online urdf-->
+ <node name="update_urdf" pkg="birl_baxter_online_urdf_update" type="update_urdf.py" />
 
 
 
