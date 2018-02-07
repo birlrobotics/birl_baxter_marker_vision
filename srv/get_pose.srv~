@@ -1,3 +1,0 @@
-std_msgs/Bool ik_flag
----
-geometry_msgs/Pose pose
