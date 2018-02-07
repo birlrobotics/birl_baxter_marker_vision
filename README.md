@@ -1,11 +1,15 @@
-﻿# Pick and Place demo
+﻿# For Shuangqi
+`roslaunch birl_baxter_vision demo.launch`
+# demo
+`rosrun birl_baxter_vision demo.py`
+# Pick and Place demo
 Go to baxter_ws
 `$ ./baxter.sh`
 ## Camera setup
 ###  Dependencies
 Install openni2
 ### Tutorial
-Checking xtion's ｓｔａｔｅ
+Checking xtion's state
 `$ lsusb`
 If xtion has not the ability of writing, you need add it by yourself, Go to `usb` direction 
 `$ cd /dev/bus/usb/001`

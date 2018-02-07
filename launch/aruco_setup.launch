@@ -7,7 +7,7 @@
     <arg name="marker_frame"          default="aruco_marker_582_frame"/>
     <arg name="camera_info"           default="$(arg camera)/camera_info"/>
     <arg name="image"                 default="$(arg camera)/image_rect_color"/>
-    <arg name="markersize"              value="0.07"/>
+    <arg name="markersize"              value="0.075"/>
     <arg name="markerid"                value="582"/>
     
     <!-- baxter to camera

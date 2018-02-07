@@ -1,0 +1,19 @@
+1. Update baxter urdf
+$ date +'secs:%s   nsecs:%N' 
+then put time got from this command line to *yaml file
+$ rostopic pub -l /robot/urdf baxter_core_msgs/URDFConfiguration -f ***.yaml
+check rviz
+$ rosrun rviz rviz
+
+2. Camera setup
+$ roslaunch openni2_launch openni2.launch
+ Setup aruco
+$ roslaunch birl_baxter_vision aruco_setup.launch
+
+remapping aruco_marker_frame to aruco_marker_pick_frame
+roslaunch birl_baxter_vision baxter_base_camera.launch
+
+2 For demo, launch trac_ik
+$ rosrun trac_ik_baxter trac_ik_server
+
+
